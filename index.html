@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Telepathic Race Design System</title>
+
+  <!-- Web fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main>
+
+    <!-- ========================================
+         PAGE HEADER
+    ========================================= -->
+
+    <header>
+      <p class="label">Telepathic Race</p>
+
+      <h1>Design System</h1>
+
+      <p>Secrets of the Ten Spiritual Vibrations</p>
+    </header>
+
+
+    <!-- ========================================
+         S1 — FOUNDATION AND RESET
+    ========================================= -->
+
+    <section>
+      <h2>S1 — Foundation and Reset</h2>
+
+      <p class="prose">
+        This design system uses a small selective reset to create predictable
+        sizing and typography while preserving useful browser defaults.
+      </p>
+
+      <h3>Reset decisions</h3>
+
+      <ul>
+        <li>
+          <code>box-sizing: border-box</code> is applied globally so declared
+          widths include padding and borders.
+        </li>
+
+        <li>
+          The default body margin is removed so page spacing can be controlled
+          by the design system.
+        </li>
+
+        <li>
+          Images and SVG elements are prevented from overflowing their
+          containers.
+        </li>
+
+        <li>
+          Form controls inherit the surrounding type system for visual
+          consistency.
+        </li>
+
+        <li>
+          Default focus indicators are intentionally not removed so keyboard
+          users retain visible interaction cues.
+        </li>
+
+        <li>
+          Lists, headings, and paragraph margins are not globally removed so
+          useful document structure and browser defaults are preserved until
+          component styles intentionally replace them.
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- ========================================
+         S2 — TOKEN INVENTORY
+    ========================================= -->
+
+    <section>
+      <h2>S2 — Token Inventory</h2>
+
+      <p class="prose">
+        The color system separates raw palette values from semantic tokens.
+        Semantic tokens describe how colors are used throughout the system.
+      </p>
+
+
+      <h3>Color tokens</h3>
+
+      <div class="token-grid">
+
+        <div class="token-card">
+          <div class="swatch swatch-bg"></div>
+          <p><code>--color-bg</code></p>
+          <p>#f5efe6</p>
+          <p>Page background</p>
+        </div>
+
+        <div class="token-card">
+          <div class="swatch swatch-surface"></div>
+          <p><code>--color-surface</code></p>
+          <p>#ffffff</p>
+          <p>Cards and raised surfaces</p>
+        </div>
+
+        <div class="token-card">
+          <div class="swatch swatch-text"></div>
+          <p><code>--color-text</code></p>
+          <p>#2b211b</p>
+          <p>Primary body text</p>
+        </div>
+
+        <div class="token-card">
+          <div class="swatch swatch-heading"></div>
+          <p><code>--color-heading</code></p>
+          <p>#4a3728</p>
+          <p>Headings and display text</p>
+        </div>
+
+        <div class="token-card">
+          <div class="swatch swatch-action"></div>
+          <p><code>--color-action</code></p>
+          <p>#b8892d</p>
+          <p>Links and interactive actions</p>
+        </div>
+
+        <div class="token-card">
+          <div class="swatch swatch-border"></div>
+          <p><code>--color-border</code></p>
+          <p>#d7b96a</p>
+          <p>Borders and separators</p>
+        </div>
+
+      </div>
+
+
+      <h3>Spacing tokens</h3>
+
+      <ul>
+        <li><code>--space-xs</code> — 0.25rem — very small internal spacing</li>
+        <li><code>--space-sm</code> — 0.5rem — compact spacing</li>
+        <li><code>--space-md</code> — 1rem — standard spacing</li>
+        <li><code>--space-lg</code> — 1.5rem — larger component spacing</li>
+        <li><code>--space-xl</code> — 2rem — section spacing</li>
+        <li><code>--space-2xl</code> — 3rem — major section separation</li>
+      </ul>
+
+
+      <h3>Sizing and measure tokens</h3>
+
+      <ul>
+        <li>
+          <code>--measure-text</code> — 65ch — maximum readable text measure
+        </li>
+
+        <li>
+          <code>--container-max</code> — 72rem — maximum page content width
+        </li>
+
+        <li>
+          <code>--control-min-height</code> — 2.75rem — minimum control height
+        </li>
+      </ul>
+
+
+      <h3>Radius tokens</h3>
+
+      <ul>
+        <li><code>--radius-sm</code> — 0.25rem — subtle rounding</li>
+        <li><code>--radius-md</code> — 0.5rem — standard component rounding</li>
+        <li><code>--radius-lg</code> — 1rem — prominent surfaces</li>
+      </ul>
+
+
+      <h3>Elevation tokens</h3>
+
+      <ul>
+        <li><code>--shadow-sm</code> — low elevation for subtle surfaces</li>
+        <li><code>--shadow-md</code> — stronger elevation for prominent surfaces</li>
+      </ul>
+
+
+      <h3>Typography tokens</h3>
+
+      <ul>
+        <li><code>--font-body</code> — body and interface text</li>
+        <li><code>--font-display</code> — headings and display text</li>
+        <li><code>--text-sm</code> — metadata and compact labels</li>
+        <li><code>--text-base</code> — standard body text</li>
+        <li><code>--text-lg</code> — small headings</li>
+        <li><code>--text-xl</code> — section headings</li>
+        <li><code>--text-2xl</code> — major display heading</li>
+        <li><code>--line-body</code> — body-text line height</li>
+        <li><code>--line-heading</code> — heading line height</li>
+      </ul>
+    </section>
+
+
+    <!-- ========================================
+         S3 — TYPOGRAPHY
+    ========================================= -->
+
+    <section>
+      <p class="label">S3 — Typography</p>
+
+      <h2>Typography</h2>
+
+      <p class="prose">
+        The Telepathic Race type system combines a display serif with a
+        readable sans-serif body stack. The display face gives the system a
+        more symbolic and reflective voice, while the body face supports
+        longer reading and interface text.
+      </p>
+
+      <h3>Display heading</h3>
+
+      <p class="type-display">Secrets of the Ten Spiritual Vibrations</p>
+
+      <p class="metadata">
+        Telepathic Race · Spiritual Framework · Design-System Specimen
+      </p>
+
+
+      <h3>Body paragraph</h3>
+
+      <p class="prose">
+        Telepathic Race presents ten spiritual vibrations as a conceptual
+        system for examining thought, questioning, love, revelation, people,
+        symbolism, leadership, infinity, death, and perfection. The typography
+        system is designed to support both reflective long-form reading and
+        compact interface information.
+      </p>
+
+
+      <h3>Heading hierarchy</h3>
+
+      <div id="vibration-eight" class="type-hierarchy">
+        <p class="sample-h1">Vibration 8 — Infinity</p>
+        <p class="sample-h2">Understanding the Infinite</p>
+        <p class="sample-h3">A Direction Beyond Limitation</p>
+    </div>
+
+
+      <h3>List example</h3>
+
+      <ul>
+        <li>Thought begins the directional movement.</li>
+        <li>Questions challenge what is already understood.</li>
+        <li>Love establishes connection.</li>
+        <li>Revelation changes perception.</li>
+      </ul>
+
+
+      <h3>Metadata</h3>
+
+      <p class="metadata">
+        Vibration 03 · Love · Reading time: 4 minutes
+      </p>
+
+
+      <h3>Inline code</h3>
+
+      <p class="prose">
+        Display typography uses the
+        <code>--font-display</code>
+        token, while body copy uses the
+        <code>--font-body</code>.
+      </p>
+
+
+      <h3>Text link</h3>
+
+      <p>
+        <a href="#vibration-eight">
+          Explore Vibration 8 — Infinity
+        </a>
+      </p>
+
+
+      <h3>Compact label</h3>
+
+      <p class="label">
+        Vibration 10 · Perfect
+      </p>
+    </section>
+
+
+    <!-- ========================================
+         S4 — ACTIONS AND STATES
+    ========================================= -->
+
+    <section>
+      <p class="label">S4 — Actions and States</p>
+
+      <h2>Actions and States</h2>
+
+      <p class="prose">
+        Interactive elements use consistent action colors, spacing, borders,
+        and visible focus indicators. Primary actions receive stronger visual
+        emphasis, while secondary actions remain clearly identifiable.
+      </p>
+
+
+      <h3>Text link</h3>
+
+      <p>
+        <a href="#vibration-eight">
+          Explore the Ten Spiritual Vibrations
+        </a>
+      </p>
+
+
+      <h3>Primary action</h3>
+
+      <button class="button button-primary" type="button">
+        Explore the Vibrations
+      </button>
+
+
+      <h3>Secondary action</h3>
+
+      <button class="button button-secondary" type="button">
+        Read the Philosophy
+      </button>
+
+
+      <h3>Disabled action</h3>
+
+      <button class="button button-primary" type="button" disabled>
+        Vibration Unavailable
+      </button>
+
+
+      <h3>Usage guidance</h3>
+
+      <p class="prose">
+        Primary buttons are reserved for the most important action within a
+        section. Secondary buttons provide supporting choices. Disabled
+        controls remain visible but communicate that the action is currently
+        unavailable.
+      </p>
+    </section>
+
+
+    <!-- ========================================
+         S5 — SURFACES AND CONTENT PATTERNS
+    ========================================= -->
+
+    <section>
+      <p class="label">S5 — Surfaces and Content Patterns</p>
+
+      <h2>Surfaces and Content Patterns</h2>
+
+      <p class="prose">
+        Reusable surfaces organize ideas into clear visual groups while
+        preserving consistent spacing, borders, and elevation across the
+        Telepathic Race system.
+      </p>
+
+
+      <h3>Vibration cards</h3>
+
+      <div class="surface-grid">
+
+        <article class="surface-card">
+          <p class="metadata">Vibration 03</p>
+
+          <h3>Love</h3>
+
+          <p>
+            Love represents connection, relationship, and the movement toward
+            unity within the spiritual framework.
+          </p>
+
+          <a href="#vibration-eight">Explore Love</a>
+        </article>
+
+
+        <article class="surface-card surface-card-elevated">
+          <p class="metadata">Vibration 08</p>
+
+          <h3>Infinity</h3>
+
+          <p>
+            Infinity represents continuation beyond apparent limits and the
+            possibility of thought extending beyond a fixed boundary.
+          </p>
+
+          <a href="#vibration-eight">Explore Infinity</a>
+        </article>
+
+      </div>
+
+
+      <h3>Notice / Callout</h3>
+
+      <aside class="callout">
+        <p class="label">System Note</p>
+
+        <p>
+          Each spiritual vibration is treated as a reusable content pattern
+          rather than a unique page style. Shared tokens keep typography,
+          spacing, color, and surfaces consistent.
+        </p>
+      </aside>
+
+
+      <h3>Media placeholder</h3>
+
+      <figure class="media-placeholder">
+
+        <div class="media-box">
+          <span>Symbolic Media Placeholder</span>
+        </div>
+
+        <figcaption>
+          Space reserved for future vibration artwork, diagrams, symbols, or
+          media.
+        </figcaption>
+
+      </figure>
+
+
+      <h3>Spacing and elevation</h3>
+
+      <p class="prose">
+        Standard surfaces use the shared spacing tokens and a subtle border.
+        Elevated surfaces use the same component structure with a stronger
+        elevation token when additional visual emphasis is needed.
+      </p>
+    </section>
+
+
+    <!-- ========================================
+         S6 — CONTROL FOUNDATIONS
+    ========================================= -->
+
+    <section>
+      <p class="label">S6 — Control Foundations</p>
+
+      <h2>Control Foundations</h2>
+
+      <p class="prose">
+        Basic controls inherit the Telepathic Race typography system and use
+        consistent spacing, borders, and visible focus treatment.
+      </p>
+
+
+      <div class="control-group">
+        <label for="vibration-search">
+          Search the vibrations
+        </label>
+
+        <input
+          type="text"
+          id="vibration-search"
+          name="vibration-search"
+          placeholder="Enter a vibration name"
+        >
+      </div>
+
+
+      <div class="control-group">
+        <label for="vibration-select">
+          Choose a vibration
+        </label>
+
+        <select id="vibration-select" name="vibration-select">
+          <option value="">Select one</option>
+          <option value="thought">1 — Thought</option>
+          <option value="question">2 — Question</option>
+          <option value="love">3 — Love</option>
+          <option value="revelation">4 — Revelation</option>
+          <option value="infinity">8 — Infinity</option>
+          <option value="perfect">10 — Perfect</option>
+        </select>
+      </div>
+
+
+      <fieldset class="control-group">
+        <legend>Display options</legend>
+
+        <label class="choice">
+          <input type="checkbox" name="symbols">
+          Show symbolic interpretations
+        </label>
+      </fieldset>
+
+
+      <fieldset class="control-group">
+        <legend>View vibrations by</legend>
+
+        <label class="choice">
+          <input
+            type="radio"
+            name="view-mode"
+            value="number"
+            checked
+          >
+          Number
+        </label>
+
+        <label class="choice">
+          <input
+            type="radio"
+            name="view-mode"
+            value="name"
+          >
+          Name
+        </label>
+
+        <label class="choice">
+          <input
+            type="radio"
+            name="view-mode"
+            value="symbol"
+          >
+          Symbol
+        </label>
+      </fieldset>
+
+
+      <button class="button button-primary" type="button">
+        Apply Selection
+      </button>
+
+
+      <h3>Usage guidance</h3>
+
+      <p class="prose">
+        Every text field and select is paired with a visible label. Related
+        checkbox and radio controls are grouped with fieldset and legend
+        elements. Controls inherit the shared type system and preserve visible
+        keyboard focus.
+      </p>
+    </section>
+
+    <section class="theme-infinity theme-demo">
+
+  <p class="label">Alternate Theme</p>
+
+  <h2>Infinity Theme</h2>
+
+  <p class="prose">
+    The Infinity theme demonstrates how semantic tokens can create an
+    alternate visual environment without rewriting individual component
+    rules. Color, surface, border, action, and focus tokens are overridden
+    within this scoped section.
+  </p>
+
+  <div class="surface-grid">
+
+    <article class="surface-card">
+      <p class="metadata">Vibration 08</p>
+
+      <h3>Infinity</h3>
+
+      <p>
+        Infinity represents continuation beyond apparent limits and the
+        possibility of thought extending beyond a fixed boundary.
+      </p>
+
+      <a href="#vibration-eight">Explore Infinity</a>
+    </article>
+
+    <article class="surface-card surface-card-elevated">
+      <p class="metadata">Vibration 10</p>
+
+      <h3>Perfect</h3>
+
+      <p>
+        Perfect represents completion within the Ten Spiritual Vibrations
+        framework.
+      </p>
+
+      <button class="button button-primary" type="button">
+        Explore Perfect
+      </button>
+    </article>
+
+  </div>
+
+
+  <h3>Actions</h3>
+
+  <button class="button button-primary" type="button">
+    Explore the Vibrations
+  </button>
+
+  <button class="button button-secondary" type="button">
+    Read the Philosophy
+  </button>
+
+
+  <h3>Control example</h3>
+
+  <div class="control-group">
+    <label for="theme-vibration">
+      Choose a vibration
+    </label>
+
+    <select id="theme-vibration" name="theme-vibration">
+      <option value="">Select one</option>
+      <option value="love">3 — Love</option>
+      <option value="revelation">4 — Revelation</option>
+      <option value="infinity">8 — Infinity</option>
+      <option value="perfect">10 — Perfect</option>
+    </select>
+  </div>
+
+</section>
+  </main>
+
+</body>
+
+</html>
